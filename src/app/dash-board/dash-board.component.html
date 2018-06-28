@@ -1,0 +1,159 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Dash Board</title>
+  <base href="/">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+
+
+
+
+<h1>Dash Board</h1>
+<p>Logged in as :{{currentUser}}</p>
+<p hidden id="user">{{currentUser}}</p>
+
+
+
+
+
+
+
+<button *ngIf='currentUser' (click)="logOut()">logout</button> -->
+
+
+
+<html>
+
+<head>
+    <title>
+        Domino Test
+    </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <style>
+        /* TITLE AND NAVIGATION */
+        .title-bar {
+            text-align: center;
+        }
+        .wrapper {
+            width: 98%;
+        }
+        body {
+            background-image: url('bg.png');
+            background-repeat: repeat;
+            background-attachment: fixed;
+            color: #5A6268;
+        }
+        /* TABLE */
+        .table {
+            width: 100%;
+            height: 500px;
+            background-color: #cad7e270;
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            vertical-align: top;
+            overflow-y: scroll;
+            white-space: nowrap;
+            text-align: center;
+            margin-left: 15px;
+        }
+        .score {
+            width: 10%;
+            height: 300px;
+            background-color: #cad7e270;
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .chat-container {
+            width: 14%;
+            height: 300px;
+            background-color: #cad7e270;
+            padding: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .game-list {
+            width: 100%;
+            border-top: 1px solid #5A6268 !important;
+            margin-top: 10px;
+        }
+        .game-list tr,
+        td,
+        th {
+            border: 1px solid #5A6268;
+        }
+        .game-list th {
+            background-color: #cad7e270;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="title-bar">
+            <img src="logo.png" width="400px">
+            <div class="navigation">
+                <h2>Welcome: {{currentUser.first_name}}</h2>
+                <button type="button" class="btn btn-secondary" (click)="createGame(currentUser)"  >Create Game</button>
+                <button type="button" class="btn btn-secondary" [routerLink]="['/board']">Leaderboard</button>
+                <button type="button" class="btn btn-danger" (click)="logOut()" >Log Out</button>
+                <br>
+                <br>
+            </div>
+        </div>
+
+        <div class="table">
+            <h3>Game List</h3>
+
+            <table class="game-list">
+                <tr>
+                    <th>Game Name</th>
+                    <th>Created By</th>
+                    <th>Players</th>
+                    <th>Password?</th>
+                    <th>Join</th>
+                </tr>
+
+              
+                    <!-- <tr>
+                        <td>Best Game Ever!</td>
+                        <td>Nat</td>
+                        <td>1/2</td>
+                        <td>
+                            <i class="fas fa-lock-open"></i>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary">Join Game</button>
+                        </td>
+                    </tr> -->
+              
+
+                
+            </table>
+
+        </div>
+
+
+    </div>
+
+    
+
+</body>
+
+</html>
